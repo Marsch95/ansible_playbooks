@@ -1,0 +1,9 @@
+- name: copy file from local host to remote host (relative path, ./files/)
+  hosts: VM
+  tasks:
+    - name: copy files
+      copy:
+        src: /temp/testfile
+        dest: $HOME/testfile
+        backup: yes
+      tags: simply copy

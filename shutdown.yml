@@ -1,0 +1,6 @@
+- name: copy file from local host to remote host (relative path, ./files/)
+  hosts: VM 
+  tasks:
+    - name: shut down the machine with 5 seconds delay
+      community.general.shutdown:
+        delay: 5
