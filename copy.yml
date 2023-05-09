@@ -1,9 +1,9 @@
-- name: copy file from local host to remote host (relative path, ./files/)
+- name: copy config file from local host to remote host (relative path, ./files/)
   hosts: VM
   tasks:
-    - name: copy files
+    - name: copy config files
       copy:
-        src: /temp/testfile
-        dest: $HOME/testfile
+        src: /temp/config
+        dest: /temp/test/
         backup: yes
       tags: simply copy

@@ -1,0 +1,22 @@
+- name: Comment/Uncomment Examples
+  hosts: VM
+  vars: 
+    path: /temp/test/config
+  tasks:
+    - name: "Comment out the line"
+      replace:
+        path: "{{ path }}"
+        regexp: 'Value 2'
+        replace: '#Value 2'
+
+    - name: "Uncomment the line"
+      replace:
+        path: "{{ path }}"
+        regexp: '#Value 3'
+        replace: 'Value 3'
+
+    - name: add line after value 4
+      ansible.builtin.lineinfile:
+        path: "{{ path }}"
+        insertafter: '^Value 4'
+        line: 'Value 5 = false'
