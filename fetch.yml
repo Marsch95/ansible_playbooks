@@ -1,0 +1,8 @@
+- name: Comment/Uncomment Examples
+  hosts: VM
+  tasks:
+    - name: Store file into /tmp/fetched/host.example.com/tmp/somefile
+      ansible.builtin.fetch:
+        src: /temp/test/log
+        dest: /temp/fetched/{{ inventory_hostname }}/
+        flat: yes
